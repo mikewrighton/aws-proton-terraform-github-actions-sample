@@ -1,0 +1,10 @@
+{
+  "deploymentId" : "d599b3eb-cd45-49dc-a467-06b1abd115a0",
+  "isResourceDeleted" : false,
+  "resourceMetadata" : {
+    "arn" : "arn:aws:proton:us-east-1:259837135622:environment/terraform-ecs-vpc-env",
+    "templateArn" : "arn:aws:proton:us-east-1:259837135622:environment-template/sample-vpc-ecs-environment",
+    "templateMajorVersion" : "1",
+    "templateMinorVersion" : "0"
+  }
+}
