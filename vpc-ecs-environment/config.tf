@@ -14,7 +14,7 @@ terraform {
     }
   }
 
-#  backend "s3" {}
+  backend "s3" {}
 }
 
 # Configure the AWS Provider
@@ -23,6 +23,6 @@ provider "aws" {
 }
 
 variable "aws_region" {
-  type = string
+  type    = string
   default = "us-east-1"
 }
