@@ -1,0 +1,11 @@
+{
+  "deploymentId" : "268bc497-94c0-4fa1-8f2d-60c47e3b4bf0",
+  "isResourceDeleted" : false,
+  "resourceMetadata" : {
+    "arn" : "arn:aws:proton:us-east-1:259837135622:service/apigw-lambda-svc/service-instance/main",
+    "templateArn" : "arn:aws:proton:us-east-1:259837135622:service-template/apigw-lambda-svc",
+    "templateMajorVersion" : "1",
+    "templateMinorVersion" : "0",
+    "environmentArn" : "arn:aws:proton:us-east-1:259837135622:environment/vpc-ecs-environment"
+  }
+}
