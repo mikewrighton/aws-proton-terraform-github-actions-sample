@@ -3,5 +3,10 @@
         "role": "arn:aws:iam::259837135622:role/ExampleGithubRole",
         "region": "us-east-1",
         "state_bucket":"aws-proton-terraform-bucket-259837135622"
+    },
+    "fargate-env": {
+        "role": "arn:aws:iam::259837135622:role/ExampleGithubRole",
+        "region": "us-east-1",
+        "state_bucket":"aws-proton-terraform-bucket-259837135622"
     }
 }
