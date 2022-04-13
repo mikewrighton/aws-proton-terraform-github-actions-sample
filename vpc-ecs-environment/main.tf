@@ -26,7 +26,7 @@ module "vpc" {
 module "ecs" {
   source  = "terraform-aws-modules/ecs/aws"
   version = "3.4.1"
-  name = "${var.environment.name}-ECS"
+  name    = "${var.environment.name}-ECS"
 }
 
 module "sns" {
