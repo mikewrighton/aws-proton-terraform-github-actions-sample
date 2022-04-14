@@ -1,7 +1,17 @@
 {
-    "REPLACE_ME": {
-        "role": "arn:aws:iam::111111111111:role/REPLACE_ME",
-        "region": "us-west-2",
-        "state_bucket":"REPLACE_ME"
+    "vpc-ecs-environment": {
+        "role": "arn:aws:iam::259837135622:role/ExampleGithubRole",
+        "region": "us-east-1",
+        "state_bucket":"aws-proton-terraform-bucket-259837135622"
+    },
+    "fargate-env": {
+        "role": "arn:aws:iam::259837135622:role/ExampleGithubRole",
+        "region": "us-east-1",
+        "state_bucket":"aws-proton-terraform-bucket-259837135622"
+    },
+    "fargate_env": {
+        "role": "arn:aws:iam::259837135622:role/ExampleGithubRole",
+        "region": "us-east-1",
+        "state_bucket":"aws-proton-terraform-bucket-259837135622"
     }
 }
