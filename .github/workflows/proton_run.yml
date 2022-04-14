@@ -136,6 +136,8 @@ jobs:
           fi
         fi
         
+        echo "setting environment to $environment_name"
+        
         echo "::set-output name=working_directory::$working_directory"
         echo "::set-output name=environment::$environment_name"
         
