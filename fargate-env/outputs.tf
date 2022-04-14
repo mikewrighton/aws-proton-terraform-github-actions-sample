@@ -6,8 +6,8 @@ To manage this resource, see AWS Proton Resource: arn:aws:proton:us-east-1:25983
 If the resource is no longer accessible within AWS Proton, it may have been deleted and may require manual cleanup.
 */
 
-output "Cluster" {
-  value = aws_ecs_cluster.fargate_cluster
+output "ClusterName" {
+  value = aws_ecs_cluster.fargate_cluster.name
 }
 
 output "ClusterArn" {
@@ -18,8 +18,8 @@ output "ServiceTaskDefExecutionRoleArn" {
   value = aws_iam_role.ecs_task_execution_role.arn
 }
 
-output "SNSTopic" {
-  value = aws_sns_topic.ping_topic
+output "SNSTopicArn" {
+  value = aws_sns_topic.ping_topic.arn
 }
 
 output "SNSTopicName" {
