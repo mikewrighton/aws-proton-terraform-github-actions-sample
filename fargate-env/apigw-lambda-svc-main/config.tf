@@ -1,5 +1,9 @@
 /*
-This file is no longer managed by AWS Proton. The associated resource has been deleted in Proton.
+This file is managed by AWS Proton. Any changes made directly to this file will be overwritten the next time AWS Proton performs an update.
+
+To manage this resource, see AWS Proton Resource: arn:aws:proton:us-east-1:259837135622:service/apigw-lambda-svc/service-instance/main
+
+If the resource is no longer accessible within AWS Proton, it may have been deleted and may require manual cleanup.
 */
 
 terraform {
@@ -19,7 +23,7 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = data.aws_region.current.id
+  region = var.aws_region
   alias  = "default"
 
   default_tags {
