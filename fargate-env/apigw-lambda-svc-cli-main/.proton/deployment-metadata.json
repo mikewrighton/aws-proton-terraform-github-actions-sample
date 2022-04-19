@@ -1,6 +1,6 @@
 {
   "deploymentId" : "48881154-cdb3-4cdf-bee2-30bf5f9d0b2b",
-  "isResourceDeleted" : false,
+  "isResourceDeleted" : true,
   "resourceMetadata" : {
     "arn" : "arn:aws:proton:us-east-1:259837135622:service/apigw-lambda-svc-cli/service-instance/main",
     "templateArn" : "arn:aws:proton:us-east-1:259837135622:service-template/apigw-lambda-svc",
