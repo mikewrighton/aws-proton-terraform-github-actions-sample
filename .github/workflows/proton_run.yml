@@ -13,6 +13,7 @@ on:
   push:
     branches:
       - main
+      - nrt
     paths:
       - '**/.proton/deployment-metadata.json'
 
