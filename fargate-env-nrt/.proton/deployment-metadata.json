@@ -1,10 +1,10 @@
 {
-  "deploymentId" : "aa061680-7dbc-4edb-9db3-1ab630dabdaa",
+  "deploymentId" : "aee5969d-bfeb-4415-a208-5920a0011b55",
   "isResourceDeleted" : false,
   "resourceMetadata" : {
     "arn" : "arn:aws:proton:us-east-1:259837135622:environment/fargate-env-nrt",
     "templateArn" : "arn:aws:proton:us-east-1:259837135622:environment-template/fargate-env",
     "templateMajorVersion" : "1",
-    "templateMinorVersion" : "2"
+    "templateMinorVersion" : "3"
   }
 }

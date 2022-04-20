@@ -11,7 +11,7 @@ module "vpc" {
 
   cidr = var.environment.inputs.vpc_cidr
 
-  azs                  = ["${var.aws_region}a"]
+  azs                  = ["${var.aws_region}a", "${var.aws_region}b"]
   private_subnets      = [var.environment.inputs.private_subnet_one_cidr, var.environment.inputs.private_subnet_two_cidr]
   public_subnets       = [var.environment.inputs.public_subnet_one_cidr, var.environment.inputs.public_subnet_two_cidr]
   enable_nat_gateway   = true
@@ -47,7 +47,7 @@ resource "aws_ecs_cluster" "fargate_cluster" {
 }
 
 resource "aws_iam_role" "ecs_task_execution_role" {
-  name               = "service_task_definition_execution_role"
+  name_prefix        = "service_task_definition_execution_role"
   assume_role_policy = data.aws_iam_policy_document.ecs_task_execution_role_policy.json
 }
 
