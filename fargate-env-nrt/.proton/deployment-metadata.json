@@ -1,6 +1,6 @@
 {
-  "deploymentId" : "ff3c6797-652d-4854-a5fe-211ac9bd379b",
-  "isResourceDeleted" : false,
+  "deploymentId" : "<proton-resource-deleted>",
+  "isResourceDeleted" : true,
   "resourceMetadata" : {
     "arn" : "arn:aws:proton:ap-northeast-1:259837135622:environment/fargate-env-nrt",
     "templateArn" : "arn:aws:proton:ap-northeast-1:259837135622:environment-template/fargate-env",
