@@ -1,0 +1,10 @@
+{
+  "deploymentId" : "2720797f-f260-43bf-aefe-67749b685e50",
+  "isResourceDeleted" : false,
+  "resourceMetadata" : {
+    "arn" : "arn:aws:proton:ap-northeast-1:259837135622:environment/ecs-ec2-env",
+    "templateArn" : "arn:aws:proton:ap-northeast-1:259837135622:environment-template/ecs-ec2-env",
+    "templateMajorVersion" : "1",
+    "templateMinorVersion" : "1"
+  }
+}
