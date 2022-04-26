@@ -1,0 +1,10 @@
+{
+  "deploymentId" : "e8f94c19-0789-407a-82ad-9c07be0dac48",
+  "isResourceDeleted" : false,
+  "resourceMetadata" : {
+    "arn" : "arn:aws:proton:ap-northeast-1:259837135622:service/worker-ecs-ec2-svc/pipeline",
+    "templateArn" : "arn:aws:proton:ap-northeast-1:259837135622:service-template/worker-ecs-ec2-svc",
+    "templateMajorVersion" : "1",
+    "templateMinorVersion" : "1"
+  }
+}
