@@ -6,6 +6,26 @@ To manage this resource, see AWS Proton Resource: arn:aws:proton:ap-northeast-1:
 If the resource is no longer accessible within AWS Proton, it may have been deleted and may require manual cleanup.
 */
 
+output "ClusterName" {
+  value = aws_ecs_cluster.cluster.name
+}
+
+output "ClusterArn" {
+  value = aws_ecs_cluster.cluster.arn
+}
+
+output "SnsTopicArn" {
+  value = aws_sns_topic.ping_topic.arn
+}
+
+output "SnsTopicName" {
+  value = aws_sns_topic.ping_topic.name
+}
+
+output "SnsRegion" {
+  value = local.region
+}
+
 output "VpcId" {
   value = module.vpc.vpc_id
 }
@@ -26,18 +46,6 @@ output "PrivateSubnetTwoId" {
   value = module.vpc.private_subnets[1]
 }
 
-output "VpcDefaultSecurityGroupId" {
-  value = module.vpc.default_security_group_id
-}
-
-output "VpcConnectorArn" {
-  value = aws_apprunner_vpc_connector.connector.id
-}
-
-output "SnsTopicName" {
-  value = aws_sns_topic.ping_topic.name
-}
-
-output "SnsRegion" {
-  value = local.region
+output "EcsHostSecurityGroupArn" {
+  value = aws_security_group.ecs_host_security_group.arn
 }
