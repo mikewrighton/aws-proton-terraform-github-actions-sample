@@ -1,11 +1,11 @@
 {
-  "deploymentId" : "6f37d87e-eb6f-49a0-a381-b6479c5571eb",
+  "deploymentId" : "5f1ae1a5-1133-4d32-88dd-4870cfc016cb",
   "isResourceDeleted" : false,
   "resourceMetadata" : {
     "arn" : "arn:aws:proton:ap-northeast-1:259837135622:service/worker-ecs-ec2-svc/service-instance/main",
     "templateArn" : "arn:aws:proton:ap-northeast-1:259837135622:service-template/worker-ecs-ec2-svc",
     "templateMajorVersion" : "1",
-    "templateMinorVersion" : "2",
+    "templateMinorVersion" : "3",
     "environmentArn" : "arn:aws:proton:ap-northeast-1:259837135622:environment/ecs-ec2-env"
   }
 }
