@@ -1,11 +1,11 @@
 {
-  "deploymentId" : "4c2a62ad-a842-47d2-b515-eb644e431760",
+  "deploymentId" : "0b9d2401-81d4-4216-8cd5-dbc8fc4d75a9",
   "isResourceDeleted" : false,
   "resourceMetadata" : {
     "arn" : "arn:aws:proton:ap-northeast-1:259837135622:service/apigw-lambda-svc-cli/service-instance/main",
     "templateArn" : "arn:aws:proton:ap-northeast-1:259837135622:service-template/apigw-lambda-svc",
     "templateMajorVersion" : "1",
-    "templateMinorVersion" : "5",
+    "templateMinorVersion" : "9",
     "environmentArn" : "arn:aws:proton:ap-northeast-1:259837135622:environment/fargate-env-nrt"
   }
 }
