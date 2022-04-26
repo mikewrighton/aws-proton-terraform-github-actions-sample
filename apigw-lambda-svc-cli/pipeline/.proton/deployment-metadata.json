@@ -1,10 +1,10 @@
 {
-  "deploymentId" : "9a3b2eb8-3aab-4520-9871-f235a545acac",
+  "deploymentId" : "894cdf78-6250-44e5-8ee7-a5443cef5c9b",
   "isResourceDeleted" : false,
   "resourceMetadata" : {
     "arn" : "arn:aws:proton:ap-northeast-1:259837135622:service/apigw-lambda-svc-cli/pipeline",
     "templateArn" : "arn:aws:proton:ap-northeast-1:259837135622:service-template/apigw-lambda-svc",
     "templateMajorVersion" : "1",
-    "templateMinorVersion" : "9"
+    "templateMinorVersion" : "10"
   }
 }
