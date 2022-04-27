@@ -1,0 +1,10 @@
+{
+  "deploymentId" : "95231459-8446-41c6-b0f9-898f082e1f58",
+  "isResourceDeleted" : false,
+  "resourceMetadata" : {
+    "arn" : "arn:aws:proton:ap-northeast-1:259837135622:service/worker-lambda-svc/pipeline",
+    "templateArn" : "arn:aws:proton:ap-northeast-1:259837135622:service-template/worker-lambda-svc",
+    "templateMajorVersion" : "1",
+    "templateMinorVersion" : "3"
+  }
+}
