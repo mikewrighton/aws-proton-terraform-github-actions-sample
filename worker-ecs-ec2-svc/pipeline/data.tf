@@ -109,8 +109,8 @@ data "aws_iam_policy_document" "deployment_role_policy" {
   statement {
     effect = "Allow"
     resources = [
-      "arn:aws:logs:${local.region}:${local.account_id}:log-group:/aws/codebuild/Deploy*Project*",
-      "arn:aws:logs:${local.region}:${local.account_id}:log-group:/aws/codebuild/Deploy*Project:*",
+      "arn:aws:logs:${local.region}:${local.account_id}:log-group:/aws/codebuild/deploy-*",
+      "arn:aws:logs:${local.region}:${local.account_id}:log-group:/aws/codebuild/deploy-:*",
     ]
     actions = [
       "logs:CreateLogGroup",
@@ -121,7 +121,7 @@ data "aws_iam_policy_document" "deployment_role_policy" {
   statement {
     effect = "Allow"
     resources = [
-      "arn:aws:codebuild:${local.region}:${local.account_id}:report-group:/Deploy*Project-*",
+      "arn:aws:codebuild:${local.region}:${local.account_id}:report-group:/deploy--*",
     ]
     actions = [
       "codebuild:CreateReportGroup",
@@ -308,7 +308,7 @@ data "aws_iam_policy_document" "pipeline_build_codepipeline_action_role_policy" 
 data "aws_iam_policy_document" "pipeline_deploy_codepipeline_action_role_policy" {
   statement {
     effect    = "Allow"
-    resources = ["arn:aws:codebuild:${local.region}:${local.account_id}:project/Deploy*", ]
+    resources = ["arn:aws:codebuild:${local.region}:${local.account_id}:project/deploy-*", ]
     actions = [
       "codebuild:BatchGetBuilds",
       "codebuild:StartBuild",
