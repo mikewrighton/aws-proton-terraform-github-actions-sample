@@ -16,11 +16,6 @@ data "aws_availability_zones" "available" {
   state = "available"
 }
 
-resource "aws_sns_topic_policy" "default" {
-  arn    = aws_sns_topic.ping_topic.arn
-  policy = data.aws_iam_policy_document.ping_topic_policy.json
-}
-
 data "aws_iam_policy_document" "ecs_task_execution_role_policy" {
   statement {
     actions = ["sts:AssumeRole"]
