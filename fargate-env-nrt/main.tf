@@ -38,12 +38,21 @@ resource "aws_sns_topic" "ping_topic" {
 
 resource "aws_ecs_cluster" "fargate_cluster" {
   name = "${var.environment.name}-Cluster"
-  capacity_providers = [
-    "FARGATE"
-  ]
+}
+
+resource "aws_ecs_cluster_capacity_providers" "fargate_cluster_capacity_providers" {
+  cluster_name = aws_ecs_cluster.fargate_cluster.name
+
+  capacity_providers = ["FARGATE"]
+
   default_capacity_provider_strategy {
     capacity_provider = "FARGATE"
   }
+}
+
+resource "aws_sns_topic_policy" "default" {
+  arn    = aws_sns_topic.ping_topic.arn
+  policy = data.aws_iam_policy_document.ping_topic_policy.json
 }
 
 resource "aws_iam_role" "ecs_task_execution_role" {
