@@ -1,0 +1,11 @@
+{
+  "deploymentId" : "191710a7-7121-4b14-9627-4dafd43b6956",
+  "isResourceDeleted" : false,
+  "resourceMetadata" : {
+    "arn" : "arn:aws:proton:ap-northeast-1:259837135622:service/backend-fargate-svc/service-instance/instance-1",
+    "templateArn" : "arn:aws:proton:ap-northeast-1:259837135622:service-template/backend-fargate-svc",
+    "templateMajorVersion" : "1",
+    "templateMinorVersion" : "0",
+    "environmentArn" : "arn:aws:proton:ap-northeast-1:259837135622:environment/fargate-env-nrt"
+  }
+}
