@@ -1,0 +1,11 @@
+{
+  "deploymentId" : "80e4a7d6-8d79-4e2a-a63a-a29a12456ca8",
+  "isResourceDeleted" : false,
+  "resourceMetadata" : {
+    "arn" : "arn:aws:proton:us-east-1:259837135622:service/backend-ecs-ec2-svc-iad/service-instance/instance",
+    "templateArn" : "arn:aws:proton:us-east-1:259837135622:service-template/backend-ecs-ec2-svc",
+    "templateMajorVersion" : "1",
+    "templateMinorVersion" : "1",
+    "environmentArn" : "arn:aws:proton:us-east-1:259837135622:environment/ecs-ec2-env-iad"
+  }
+}
