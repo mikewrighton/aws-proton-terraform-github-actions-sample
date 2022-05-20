@@ -1,0 +1,9 @@
+{
+  "deploymentId" : "aea7c034-a5af-449b-9a33-574c298021b1",
+  "isResourceDeleted" : false,
+  "componentMetadata" : {
+    "arn" : "arn:aws:proton:us-east-1:259837135622:component/test-component",
+    "environmentArn" : "arn:aws:proton:us-east-1:259837135622:environment/ecs-ec2-env-iad",
+    "componentType" : "default"
+  }
+}
