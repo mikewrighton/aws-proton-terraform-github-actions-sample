@@ -1,0 +1,11 @@
+{
+  "deploymentId" : "30f0465e-fc11-407e-a65a-de5ccfb9427b",
+  "isResourceDeleted" : true,
+  "resourceMetadata" : {
+    "arn" : "arn:aws:proton:us-east-1:259837135622:service/apigw-lambda-svc-cli/service-instance/main",
+    "templateArn" : "arn:aws:proton:us-east-1:259837135622:service-template/apigw-lambda-svc",
+    "templateMajorVersion" : "1",
+    "templateMinorVersion" : "4",
+    "environmentArn" : "arn:aws:proton:us-east-1:259837135622:environment/fargate-env"
+  }
+}
