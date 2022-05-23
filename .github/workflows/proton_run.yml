@@ -79,7 +79,7 @@ jobs:
     - name: Get data
       id: get-data
       run: |
-        modified_resource_arn=$(jq -r '.resourceMetadata.arn' ${{ steps.find-modified.outputs.deployment-metadata-path }})
+        modified_resource_arn=$(jq -r '(.resourceMetadata.arn // .componentMetadata.arn)' ${{ steps.find-modified.outputs.deployment-metadata-path }})
         echo "::set-output name=resource_arn::$modified_resource_arn"
         
         IFS=':'
@@ -107,9 +107,6 @@ jobs:
 
           service_name=${split_resources[1]}
           instance_name=${split_resources[3]}
-          
-          echo "setting service_name to $service_name"
-          echo "setting instance_name to $instance_name"
 
           working_directory=$environment_name/$service_name-$instance_name/
         elif [[ "$modified_resource_arn" == *"/pipeline"* ]]; then
@@ -122,6 +119,14 @@ jobs:
           service_name=${split_resources[1]}
 
           working_directory=$service_name/pipeline
+        elif [[ "$modified_resource_arn" == *":component/"* ]]; then
+          environment_arn=$(jq -r '.componentMetadata.environmentArn' ${{ steps.find-modified.outputs.deployment-metadata-path }})
+          environment_name=${environment_arn##*/}
+          resource_portion=${modified_resource_arn##*:}
+          IFS='/'
+          read -a split_resources <<< "$resource_portion"
+          component_name=${split_resources[1]}
+          working_directory=$environment_name/components/$component_name/
         fi
 
         if [[ $(jq -r --arg env $environment_name 'has($env)' env_config.json) = "true" ]]; then
@@ -138,8 +143,6 @@ jobs:
             exit 1
           fi
         fi
-        
-        echo "setting environment to $environment_name"
         
         echo "::set-output name=working_directory::$working_directory"
         echo "::set-output name=environment::$environment_name"
@@ -164,6 +167,8 @@ jobs:
         shell: bash # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
 
     if: needs.get-deployment-data.result == 'success' && needs.get-deployment-data.outputs.is_deleted == 'false'
+    
+    continue-on-error: true
 
     outputs:
       success: ${{ steps.mark_success.outputs.success }}
@@ -198,7 +203,8 @@ jobs:
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
       id: tf_fmt
-      run: terraform fmt -diff -check
+      # run: terraform fmt -diff -check
+      run: terraform fmt
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
@@ -267,13 +273,13 @@ jobs:
         formatted_outputs=( $(echo $outputs_json | jq "to_entries|map({key: .key, valueString: .value.value})") )
       
         # Notify proton
-        aws proton notify-resource-deployment-status-change --region ${{ needs.get-deployment-data.outputs.proton_region }} --resource-arn ${{ needs.get-deployment-data.outputs.resource_arn }} --status SUCCEEDED --deployment-id ${{ needs.get-deployment-data.outputs.deployment_id }} --outputs "${formatted_outputs[*]}"
+        echo "aws proton notify-resource-deployment-status-change --region ${{ needs.get-deployment-data.outputs.proton_region }} --resource-arn ${{ needs.get-deployment-data.outputs.resource_arn }} --status SUCCEEDED --deployment-id ${{ needs.get-deployment-data.outputs.deployment_id }} --outputs \"${formatted_outputs[*]}\""
         echo "Notify success!"   
         
     - name: Notify Proton Failure
       if: needs.terraform.outputs.success != 'True' || steps.tf_init.outcome != 'success'
       run: |
-        aws proton notify-resource-deployment-status-change --region ${{ needs.get-deployment-data.outputs.proton_region }} --resource-arn ${{ needs.get-deployment-data.outputs.resource_arn }} --status FAILED --deployment-id ${{ needs.get-deployment-data.outputs.deployment_id }}
+        echo "aws proton notify-resource-deployment-status-change --region ${{ needs.get-deployment-data.outputs.proton_region }} --resource-arn ${{ needs.get-deployment-data.outputs.resource_arn }} --status FAILED --deployment-id ${{ needs.get-deployment-data.outputs.deployment_id }}"
         echo "Notify failure!"
 
   terraform-destroy:
@@ -311,7 +317,6 @@ jobs:
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
       id: tf_init
-      continue-on-error: true
       run: terraform init -backend-config="bucket=${{ needs.get-deployment-data.outputs.state_bucket }}" -backend-config="key=${{ needs.get-deployment-data.outputs.working_directory }}terraform.tfstate" -backend-config="region=${{ needs.get-deployment-data.outputs.target_region }}"
     
     - name: Terraform Destroy
