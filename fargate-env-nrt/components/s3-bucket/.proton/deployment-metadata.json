@@ -1,0 +1,9 @@
+{
+  "deploymentId" : "f57aa714-47ef-4e28-971f-bf43e10ad903",
+  "isResourceDeleted" : false,
+  "componentMetadata" : {
+    "arn" : "arn:aws:proton:ap-northeast-1:259837135622:component/s3-bucket",
+    "environmentArn" : "arn:aws:proton:ap-northeast-1:259837135622:environment/fargate-env-nrt",
+    "componentType" : "default"
+  }
+}
