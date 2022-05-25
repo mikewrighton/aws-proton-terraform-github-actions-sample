@@ -1,0 +1,11 @@
+{
+  "deploymentId" : "c9683b2e-b5e5-4694-9cd8-f31c38c5b236",
+  "isResourceDeleted" : false,
+  "resourceMetadata" : {
+    "arn" : "arn:aws:proton:ap-northeast-1:259837135622:service/fargate-componentized/service-instance/main",
+    "templateArn" : "arn:aws:proton:ap-northeast-1:259837135622:service-template/load-balanced-fargate-svc-with-components",
+    "templateMajorVersion" : "1",
+    "templateMinorVersion" : "0",
+    "environmentArn" : "arn:aws:proton:ap-northeast-1:259837135622:environment/fargate-env-nrt"
+  }
+}
