@@ -1,9 +1,11 @@
 {
-  "deploymentId" : "e22324c1-afb9-4279-9d63-701d3e2cb18a",
+  "deploymentId" : "c45513a3-2656-4bd7-bfff-dc595c689b73",
   "isResourceDeleted" : false,
   "componentMetadata" : {
     "arn" : "arn:aws:proton:ap-northeast-1:259837135622:component/s3-bucket",
     "environmentArn" : "arn:aws:proton:ap-northeast-1:259837135622:environment/fargate-env-nrt",
+    "serviceArn" : "arn:aws:proton:ap-northeast-1:259837135622:service/svc-comps",
+    "serviceInstanceArn" : "arn:aws:proton:ap-northeast-1:259837135622:service/svc-comps/service-instance/i",
     "componentType" : "default"
   }
 }
