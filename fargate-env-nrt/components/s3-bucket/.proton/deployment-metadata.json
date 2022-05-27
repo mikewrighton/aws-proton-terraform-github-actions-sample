@@ -1,5 +1,5 @@
 {
-  "deploymentId" : "55921c1f-c005-4075-8417-a980a3a7a55a",
+  "deploymentId" : "d6798b90-e768-4584-99b0-a026b7f7c5dd",
   "isResourceDeleted" : false,
   "componentMetadata" : {
     "arn" : "arn:aws:proton:ap-northeast-1:259837135622:component/s3-bucket",
